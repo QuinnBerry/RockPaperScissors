@@ -2,9 +2,11 @@
 TIE = "tie"
 PLAYER1 = "player1"
 PLAYER2 = "player2"
+INVALID_INPUT = "invalid input"
 ROCK = "rock"
 PAPER = "paper"
 SCISSORS = "scissors"
+
 
 def playRound(p1, p2):
     if (p1.casefold() == p2.casefold()):
@@ -21,3 +23,5 @@ def playRound(p1, p2):
         return PLAYER1
     elif(p1.casefold() == SCISSORS and p2.casefold() == ROCK):
         return PLAYER2
+    else:
+        return INVALID_INPUT

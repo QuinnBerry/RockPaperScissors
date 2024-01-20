@@ -28,6 +28,10 @@ class TestGame(unittest.TestCase):
     
     def test_scissors_vs_rock(self):
         self.assertEqual(game.PLAYER2, game.playRound(game.SCISSORS, game.ROCK))
+    
+    def test_invalid_input(self):
+        self.assertEqual(game.INVALID_INPUT, game.playRound("invalid", game.SCISSORS))
+        self.assertEqual(game.INVALID_INPUT, game.playRound(game.SCISSORS, "invalid"))
 
 if __name__ == '__main__':
     unittest.main()
