@@ -1,15 +1,6 @@
 import random
 from move import Result, createMove, Rock, Paper, Scissors
 
-TIE = "tie"
-PLAYER1 = "player1"
-PLAYER2 = "player2"
-INVALID_INPUT = "invalid input"
-
-ROCK = "rock"
-PAPER = "paper"
-SCISSORS = "scissors"
-
 USER_WINNER_MESSAGE = "You Win!"
 CPU_WINNER_MESSAGE = "CPU Wins..."
 TIE_MESSAGE = "It's a Tie!"
