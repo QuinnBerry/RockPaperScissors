@@ -16,7 +16,7 @@ INVALID_INPUT_MESSAGE = "You entered an invalid move"
 
 choices = [ROCK, PAPER, SCISSORS]
 
-winnerMessages = {
+game_result_messages = {
     TIE: TIE_MESSAGE,
     PLAYER1: USER_WINNER_MESSAGE,
     PLAYER2: CPU_WINNER_MESSAGE,
@@ -53,4 +53,4 @@ if __name__ == '__main__':
     result = playRound(user_choice, cpu_choice)
     print("You chose: {user_choice}, the CPU chose: {cpu_choice}.".format(
         user_choice = user_choice.capitalize(), cpu_choice = cpu_choice.capitalize()))
-    print(winnerMessages[result])
+    print(game_result_messages[result])
