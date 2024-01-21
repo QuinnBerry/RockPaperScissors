@@ -23,6 +23,8 @@ def createMove(moveType):
 class Move():
     def check(self, move):
         pass
+    def get_name(self):
+        return type(self).__name__
 
 class Rock(Move):
     def check(self, move):

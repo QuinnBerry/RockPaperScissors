@@ -1,4 +1,5 @@
 import random
+from move import Result, createMove, Rock, Paper, Scissors
 
 TIE = "tie"
 PLAYER1 = "player1"
@@ -14,13 +15,13 @@ CPU_WINNER_MESSAGE = "CPU Wins..."
 TIE_MESSAGE = "It's a Tie!"
 INVALID_INPUT_MESSAGE = "You entered an invalid move"
 
-choices = [ROCK, PAPER, SCISSORS]
+choices = [Rock(), Paper(), Scissors()]
 
 game_result_messages = {
-    TIE: TIE_MESSAGE,
-    PLAYER1: USER_WINNER_MESSAGE,
-    PLAYER2: CPU_WINNER_MESSAGE,
-    INVALID_INPUT: INVALID_INPUT_MESSAGE
+    Result.TIE: TIE_MESSAGE,
+    Result.PLAYER1: USER_WINNER_MESSAGE,
+    Result.PLAYER2: CPU_WINNER_MESSAGE,
+    Result.INVALID: INVALID_INPUT_MESSAGE
 }
 
 
@@ -33,9 +34,9 @@ def getCPUChoice():
 
 
 if __name__ == '__main__':
-    user_choice = input("Welcome to Rock Paper Scissors, please enter your choice: ")
+    user_choice = createMove(input("Welcome to Rock Paper Scissors, please enter your choice: "))
     cpu_choice = getCPUChoice()
     result = playRound(user_choice, cpu_choice)
     print("You chose: {user_choice}, the CPU chose: {cpu_choice}.".format(
-        user_choice = user_choice.capitalize(), cpu_choice = cpu_choice.capitalize()))
+        user_choice = user_choice.get_name(), cpu_choice = cpu_choice.get_name()))
     print(game_result_messages[result])
